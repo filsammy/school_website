@@ -20,42 +20,53 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the project.
 
-Core Framework:
--Next.js 14 (App Router)
--TypeScript
+## Tech Stack
 
-Styling & UI:
--Tailwind CSS
--shadcn/ui
--Lucide Icons
+### Core Framework:
 
-State & Data:
--React Server Components (RSC) – default in Next.js
--TanStack Query (React Query) (later)
--Zod
+- Next.js 14 (App Router)
+- TypeScript
 
-Forms:
--React Hook Form
--Integrated with Zod
+### Styling & UI:
 
-Auth (Future):
--NextAuth.js / Auth.js
+- Tailwind CSS
+- shadcn/ui
+- Lucide Icons
 
--Database (Future-Ready)
+### State & Data:
 
-Choose one:
--PostgreSQL + Prisma
+- React Server Components (RSC) – default in Next.js
+- TanStack Query (React Query) (later)
+- Zod
 
-AI Integration: -[TO BE FILLED BY @JayR]
--Use cases:
---AI school assistant chatbot
---Automated announcements
---Student Q&A
---Learning recommendations
+### Forms:
 
-Deployment:
-Vercel (best for Next.js)
-OR -[TO BE FILLED BY @JayR]
+- React Hook Form
+- Integrated with Zod
+
+### Auth (Future):
+
+- NextAuth.js / Auth.js
+
+### Database (Future-Ready):
+
+- PostgreSQL + Prisma
+
+### AI Integration:
+
+- [TO BE FILLED BY @JayR]
+- Use cases:
+  - AI school assistant chatbot
+  - Automated announcements
+  - Student Q&A
+  - Learning recommendations
+
+### Deployment:
+
+- Vercel (best for Next.js)
+- OR [TO BE FILLED BY @JayR]
+
+## Project Structure
 
 ```bash
 src/
@@ -63,53 +74,81 @@ src/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
+├── components/
+│   └── ui/
 ├── public/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── package.json
 ```
 
-Key Files:
-#app/layout.tsx
--Root layout
--SEO metadata
--Shared UI (navbar/footer later)
+### Key Files:
 
-#app/page.tsx
--Homepage
--Server Component by default
+**app/layout.tsx**
 
-#app/globals.css
--Tailwind base styles
+- Root layout
+- SEO metadata
+- Shared UI (navbar/footer)
 
-How to Add Backgrounds
-Each page supports custom backgrounds via the backgroundElement prop:
+**app/page.tsx**
 
-// Video background
-```bash
+- Homepage
+- Server Component by default
+
+**app/globals.css**
+
+- Tailwind base styles
+
+## How to Add Backgrounds
+
+Each page supports custom backgrounds via the `backgroundElement` prop:
+
+### Video background
+
+```tsx
 <PageWrapper
   title="Your Title"
   backgroundElement={
-    <video src="/videos/your-video.mp4" autoPlay loop muted 
-      className="absolute inset-0 w-full h-full object-cover" />
+    <video
+      src="/videos/your-video.mp4"
+      autoPlay
+      loop
+      muted
+      className="absolute inset-0 w-full h-full object-cover"
+    />
   }
 >
+  {/* Your content */}
+</PageWrapper>
 ```
-// Image background
-```bash
+
+### Image background
+
+```tsx
 <PageWrapper
   title="Your Title"
   backgroundElement={
-    <Image src="/images/your-bg.jpg" alt="BG" fill className="object-cover" />
+    <Image
+      src="/images/your-bg.jpg"
+      alt="Background"
+      fill
+      className="object-cover"
+    />
   }
 >
+  {/* Your content */}
+</PageWrapper>
 ```
-// Gradient background
-```bash
+
+### Gradient background
+
+```tsx
 <PageWrapper
   title="Your Title"
   backgroundElement={
     <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700" />
   }
 >
+  {/* Your content */}
+</PageWrapper>
 ```
