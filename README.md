@@ -1,8 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +18,98 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Core Framework:
+-Next.js 14 (App Router)
+-TypeScript
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Styling & UI:
+-Tailwind CSS
+-shadcn/ui
+-Lucide Icons
 
-## Learn More
+State & Data:
+-React Server Components (RSC) – default in Next.js
+-TanStack Query (React Query) (later)
+-Zod
 
-To learn more about Next.js, take a look at the following resources:
+Forms:
+-React Hook Form
+-Integrated with Zod
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Auth (Future):
+-NextAuth.js / Auth.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-Database (Future-Ready)
 
-## Deploy on Vercel
+Choose one:
+-PostgreSQL + Prisma
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+AI Integration: -[TO BE FILLED BY @JayR]
+-Use cases:
+--AI school assistant chatbot
+--Automated announcements
+--Student Q&A
+--Learning recommendations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment:
+Vercel (best for Next.js)
+OR -[TO BE FILLED BY @JayR]
+
+```bash
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── public/
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+```
+
+Key Files:
+#app/layout.tsx
+-Root layout
+-SEO metadata
+-Shared UI (navbar/footer later)
+
+#app/page.tsx
+-Homepage
+-Server Component by default
+
+#app/globals.css
+-Tailwind base styles
+
+How to Add Backgrounds
+Each page supports custom backgrounds via the backgroundElement prop:
+
+// Video background
+```bash
+<PageWrapper
+  title="Your Title"
+  backgroundElement={
+    <video src="/videos/your-video.mp4" autoPlay loop muted 
+      className="absolute inset-0 w-full h-full object-cover" />
+  }
+>
+```
+// Image background
+```bash
+<PageWrapper
+  title="Your Title"
+  backgroundElement={
+    <Image src="/images/your-bg.jpg" alt="BG" fill className="object-cover" />
+  }
+>
+```
+// Gradient background
+```bash
+<PageWrapper
+  title="Your Title"
+  backgroundElement={
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700" />
+  }
+>
+```
